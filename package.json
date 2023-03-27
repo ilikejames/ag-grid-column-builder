@@ -1,6 +1,6 @@
 {
   "name": "ag-grid-column-builder",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "private": false,
   "repository": {
     "type": "git",
@@ -16,6 +16,7 @@
     }
   },
   "types": "dist/index.d.ts",
+  "files": ["dist"],
   "license": "MIT",
   "peerDependencies": {
     "@ag-grid-community/core": ">=20.0.0 <30.0.0"
