@@ -1,12 +1,20 @@
 {
   "name": "ag-grid-column-builder",
   "version": "1.0.0",
-  "description": "A typesafe column builder for ag-grid",
-  "main": "src/index.ts",
+  "private": false,
+  "description": "A type safe column builder for ag-grid that automatically correctly types the definitions handler arguments",
+  "main": "dist/index.cjs",
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "types": "dist/index.d.ts",
   "license": "MIT",
-
   "peerDependencies": {
-    "@ag-grid-community/core": "29.x || 28.x || 27.x || 26.x || 25.x || 24.x || 23.x || 22.x || 21.x || 20.x"
+    "@ag-grid-community/core": ">=20.0.0 <30.0.0"
   },
   "devDependencies": {
     "@ag-grid-community/core": "^26.0.0",
@@ -19,6 +27,7 @@
   "scripts": {
     "lint": "eslint --ext .js,.jsx,.ts,.tsx ./src",
     "build": "tsup src/index.ts --format cjs,esm --dts",
-    "test": "yarn tsc --noEmit"
+    "test": "yarn tsc --noEmit",
+    "prepublish": "yarn build && yarn test"
   }
 }

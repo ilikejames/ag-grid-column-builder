@@ -22,7 +22,7 @@ export function createColumns<T extends object>() {
             columns.push(groupDefinition)
             return builder
         },
-        value: () => columns,
+        build: () => columns,
     }
     return builder
 }
