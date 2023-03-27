@@ -17,7 +17,9 @@ This library uses the dot notation expressed in the `field` definition property 
 ```ts
 type Person = { firstName : string, lastName: string, age: number  }
 
+
 const definition = createColumns<Person>()
+    // .add({ field: 'unknown' }) // ❌ no such path
     .add({
         field: 'age',
         valueFormatter: ({ value, data }) => {
@@ -81,8 +83,8 @@ const definition = createColumns<Shop>()
     .addGroup({
         headerName: 'Contact',
         children: createColumns<Shop>()
-            .add({field: person, cellRenderer: PersonRender})
-            .add({field: tel, valueFormatter: ({ value }) => value.join(', ')})
+            .add({field: 'contact.person', cellRenderer: PersonRender})
+            .add({field: 'contact.tel', valueFormatter: ({ value }) => value.join(', ')})
     })
     .untypedAdd({ flex: 1 })
     .build()
