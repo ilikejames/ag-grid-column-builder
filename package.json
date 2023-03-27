@@ -1,7 +1,11 @@
 {
   "name": "ag-grid-column-builder",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": false,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ilikejames/ag-grid-column-builder/"
+  },
   "description": "A type safe column builder for ag-grid that automatically correctly types the definitions handler arguments",
   "main": "dist/index.cjs",
   "type": "module",
