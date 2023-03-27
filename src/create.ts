@@ -6,9 +6,16 @@ export function createColDef<T extends object, K extends DotNotation<T, keyof T>
     return options
 }
 
-export function createColumns<T extends object>() {
+type CreateColumns<T extends object> = {
+    add: <K extends DotNotation<T, keyof T>>(options: TypedColDef<T, K>) => CreateColumns<T>
+    untypedAdd: (definition: ColDef) => CreateColumns<T>
+    addGroup: (groupDefinition: ColGroupDef) => CreateColumns<T>
+    build: () => (ColDef | ColGroupDef)[]
+}
+
+export function createColumns<T extends object>(): CreateColumns<T> {
     const columns = [] as (ColDef | ColGroupDef)[]
-    const builder = {
+    const builder: CreateColumns<T> = {
         add: <K extends DotNotation<T, keyof T>>(options: TypedColDef<T, K>) => {
             const definition = createColDef<T, K>(options)
             columns.push(definition as ColDef)
