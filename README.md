@@ -4,13 +4,23 @@ A type safe builder for creating column definitions in ag-grid.
 
 Ag-grid now supports types on the `ColDef` but its not implemented very well, with very little type safety. 
 
-This library uses the dot notation expressed in the `field` definition property to automatically provide the types for the columns other properties, and provide build-time breaks if the dot notation is no longer correct. 
+This library uses the dot notation expressed in the `field` definition property to automatically provide the types for the column's other properties, and provide build-time breaks if the dot notation is no longer correct. 
+
+### Install
+
+```sh
+    npm install ag-grid-column-builder
+```
 
 ### Features
 
  - build errors when the `field` no longer matches the source object 
  - automatic typing of `ColDef` handlers, passing the `value`, `data`, `node.data` all correctly typed, helping to catch api type changes at **build time**, not _runtime_.
  - accelerator for custom renderer components that only require a `value` property
+
+### Requirements
+
+Requires `@ag-grid-community/core` to be installed. 
 
 ### Examples
 
@@ -20,6 +30,7 @@ type Person = { firstName : string, lastName: string, age: number  }
 
 const definition = createColumns<Person>()
     // .add({ field: 'unknown' }) // ❌ no such path
+    // .add({ field: 'age.something' }) // ❌ no such path
     .add({
         field: 'age',
         valueFormatter: ({ value, data }) => {
@@ -140,7 +151,7 @@ This library/builder provides fully typed values for the following `ColDef` prop
 - valueFormatter
 - equals
 - onCellValueChanged
-- onCellClicked?
+- onCellClicked
 - onCellDoubleClicked
 - cellClass
 - cellClassRules
