@@ -1,9 +1,9 @@
-enum OrderStatus {
+export enum OrderStatus {
     Open = 1,
     Closed = 2,
 }
 
-type User = {
+export type User = {
     id: number
     name: string
 }
