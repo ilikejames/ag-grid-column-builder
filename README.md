@@ -1,6 +1,9 @@
 # ag-grid-column-builder
 
-A type safe builder for creating column definitions in ag-grid. 
+[![NPM Version][npm-image]][npm-url]
+
+
+A typesafe builder for creating column definitions in ag-grid. 
 
 Ag-grid now supports types on the `ColDef` but its not implemented very well, with very little type safety. 
 
@@ -26,7 +29,6 @@ Requires `@ag-grid-community/core` to be installed.
 
 ```ts
 type Person = { firstName : string, lastName: string, age: number  }
-
 
 const definition = createColumns<Person>()
     // .add({ field: 'unknown' }) // ❌ no such path
@@ -160,4 +162,8 @@ This library/builder provides fully typed values for the following `ColDef` prop
 
 ### License
 
-ag-grid-column-builder is licensed under the MIT License. See the LICENSE file for more information.
+ag-grid-column-builder is licensed under the [MIT License](https://mit-license.org/).
+
+
+[npm-image]: https://img.shields.io/npm/v/ag-grid-column-builder.svg
+[npm-url]: https://npmjs.org/package/ag-grid-column-builder
