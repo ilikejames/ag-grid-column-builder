@@ -1,6 +1,6 @@
 {
   "name": "ag-grid-column-builder",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "private": false,
   "keywords": ["ag-grid", "typescript", "typesafe", "type safe", "column", "coldef", "builder"],
   "repository": {
