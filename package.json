@@ -2,7 +2,15 @@
   "name": "ag-grid-column-builder",
   "version": "1.1.2",
   "private": false,
-  "keywords": ["ag-grid", "typescript", "typesafe", "type safe", "column", "coldef", "builder"],
+  "keywords": [
+    "ag-grid",
+    "typescript",
+    "typesafe",
+    "type safe",
+    "column",
+    "coldef",
+    "builder"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/ilikejames/ag-grid-column-builder/"
@@ -17,7 +25,9 @@
     }
   },
   "types": "dist/index.d.ts",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "license": "MIT",
   "peerDependencies": {
     "@ag-grid-community/core": ">=20.0.0 <30.0.0"
@@ -27,7 +37,7 @@
     "@typescript-eslint/eslint-plugin": "^5.53.0",
     "@typescript-eslint/parser": "^5.53.0",
     "eslint": "^8.36.0",
-    "tsup": "^6.7.0",
+    "tsup": "^7.1.0",
     "typescript": "^5.0.0"
   },
   "scripts": {
